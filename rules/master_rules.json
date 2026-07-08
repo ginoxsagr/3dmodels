@@ -1,0 +1,307 @@
+{
+  "version": "V19 PREPARATION GN",
+  "globalRules": [
+    "Universal position structure: THESI_1, THESI_2, THESI_3, THESI_4 with configuration assemblies below each position.",
+    "Configuration names may use S33/S44/S55/S66, G33/G44, D33/D66, N33/N44, Z22/Z33, PORTA/PORTA-Z aliases.",
+    "Door is always first where positions exist.",
+    "GLB loading is based on models.json, not on generated Product Code filename.",
+    "Only visible configuration is exported to STL.",
+    "Remote unit message appears automatically for remote P models.",
+    "GN selector hides/shows MIAR/MIAMR/MPIR assemblies according to selected GN."
+  ],
+  "lengthCodes": {
+    "570": "57",
+    "800": "80",
+    "915": "91",
+    "955": "95",
+    "1145": "114",
+    "1295": "129",
+    "1300": "130",
+    "1365": "136",
+    "1450": "145",
+    "1595": "159",
+    "1750": "175",
+    "1820": "182",
+    "1975": "197",
+    "2045": "204",
+    "2200": "220"
+  },
+  "categories": {
+    "standard": {
+      "label": "Standard Counter",
+      "series": {
+        "main": {
+          "label": "Standard Counter",
+          "depths": [
+            600,
+            700,
+            800
+          ],
+          "lengthsByDepth": {
+            "600": [
+              800,
+              955,
+              1145,
+              1300,
+              1595,
+              1750,
+              2045,
+              2200
+            ],
+            "700": [
+              800,
+              955,
+              1145,
+              1300,
+              1595,
+              1750,
+              2045,
+              2200
+            ],
+            "800": [
+              1295,
+              1450,
+              1595,
+              1750,
+              1820,
+              1975,
+              2045,
+              2200
+            ]
+          },
+          "family": "70",
+          "cooling": true,
+          "top": true,
+          "gn": null,
+          "drawerRule": "standard",
+          "codeRule": "standard"
+        }
+      }
+    },
+    "short": {
+      "label": "Short Counter",
+      "series": {
+        "main": {
+          "label": "Short Counter",
+          "depths": [
+            700
+          ],
+          "lengthsByDepth": {
+            "700": [
+              800,
+              955,
+              1145,
+              1300,
+              1595,
+              1750,
+              2045,
+              2200
+            ]
+          },
+          "family": "47",
+          "cooling": true,
+          "top": true,
+          "gn": null,
+          "drawerRule": "z",
+          "codeRule": "standard"
+        }
+      }
+    },
+    "bottom": {
+      "label": "Bottom Unit Counter",
+      "series": {
+        "standard": {
+          "label": "Bottom Unit Standard",
+          "depths": [
+            700
+          ],
+          "lengthsByDepth": {
+            "700": [
+              570,
+              915,
+              1365
+            ]
+          },
+          "family": "47",
+          "cooling": true,
+          "top": true,
+          "gn": null,
+          "drawerRule": "z",
+          "codeRule": "bottomStandard"
+        },
+        "american": {
+          "label": "American Opening",
+          "depths": [
+            700
+          ],
+          "lengthsByDepth": {
+            "700": [
+              915,
+              1365
+            ]
+          },
+          "family": "47",
+          "cooling": false,
+          "top": false,
+          "gn": {
+            "GN 1/4": "MIAMR17",
+            "GN 1/3": "MIAMR37"
+          },
+          "drawerRule": "z",
+          "codeRule": "prefix"
+        },
+        "salad": {
+          "label": "Salad Counter",
+          "depths": [
+            700
+          ],
+          "lengthsByDepth": {
+            "700": [
+              915,
+              1365
+            ]
+          },
+          "family": "47",
+          "cooling": false,
+          "top": false,
+          "gn": null,
+          "drawerRule": "z",
+          "codeRule": "fixedPrefix",
+          "fixedPrefix": "MSLR17"
+        },
+        "fish": {
+          "label": "Fish / Ice Counter",
+          "depths": [
+            700
+          ],
+          "lengthsByDepth": {
+            "700": [
+              570,
+              915
+            ]
+          },
+          "family": "70",
+          "cooling": false,
+          "top": true,
+          "gn": null,
+          "drawerRule": "none",
+          "codeRule": "fish"
+        }
+      }
+    },
+    "prep": {
+      "label": "Preparation Counter",
+      "series": {
+        "standard_opening": {
+          "label": "Standard Opening",
+          "depths": [
+            700
+          ],
+          "lengthsByDepth": {
+            "700": [
+              1300,
+              1750,
+              2200
+            ]
+          },
+          "family": "70",
+          "cooling": false,
+          "top": false,
+          "gn": {
+            "GN 1/1": "MIAR17",
+            "GN 1/4": "MIAR27",
+            "GN 1/3": "MIAR37"
+          },
+          "drawerRule": "s",
+          "codeRule": "prefix"
+        },
+        "raised_toast": {
+          "label": "Raised Opening / Toast",
+          "depths": [
+            700,
+            800
+          ],
+          "lengthsByDepth": {
+            "700": [
+              1300,
+              1750
+            ],
+            "800": [
+              1450,
+              1750,
+              1975
+            ]
+          },
+          "family": "70",
+          "cooling": false,
+          "top": false,
+          "gn": {
+            "GN 1/4": {
+              "700": "MPIR17",
+              "800": "MPIR18"
+            },
+            "GN 1/3": {
+              "700": "MPIR37",
+              "800": "MPIR38"
+            }
+          },
+          "drawerRule": "depthLength",
+          "codeRule": "prefix"
+        },
+        "american": {
+          "label": "American Opening",
+          "depths": [
+            700,
+            800
+          ],
+          "lengthsByDepth": {
+            "700": [
+              1300,
+              1750
+            ],
+            "800": [
+              1450,
+              1750,
+              1975
+            ]
+          },
+          "family": "70",
+          "cooling": false,
+          "top": false,
+          "gn": {
+            "GN 1/4": {
+              "700": "MIAMR17",
+              "800": "MIAMR18"
+            },
+            "GN 1/3": {
+              "700": "MIAMR37",
+              "800": "MIAMR38"
+            }
+          },
+          "drawerRule": "depthLength",
+          "codeRule": "prefix"
+        },
+        "pizza": {
+          "label": "Pizza Counter",
+          "depths": [
+            800
+          ],
+          "lengthsByDepth": {
+            "800": [
+              1450,
+              1750,
+              1975,
+              2200
+            ]
+          },
+          "family": "70",
+          "cooling": false,
+          "top": false,
+          "gn": null,
+          "drawerRule": "depthLength",
+          "codeRule": "pizza"
+        }
+      }
+    }
+  }
+}
